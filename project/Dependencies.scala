@@ -1,7 +1,22 @@
 import sbt._
+import sbt.Keys._
 
 object Dependencies {
 
+  val commonSettings = Seq(
+    organization := "com.waqar",
+    //version := util.Properties.propOrNone("version").getOrElse("0.1-SNAPSHOT"),
+    scalaVersion := "2.13.1",
+    sources in(Compile, doc) := Seq.empty,
+    publishArtifact in(Compile, packageDoc) := false,
+    scalacOptions ++= Seq(
+      "-unchecked",
+      "-deprication",
+      "-Ypartial-unification",
+      "-encoding", "UTF8"
+    )
+
+  )
   val akkaVersion = "2.6.4"
   val circeVersion = "0.12.0"
 

@@ -1,2 +1,2 @@
 
-GET         /home                 HomeController.home
+GET         /home                 controllers.HomeController.home
